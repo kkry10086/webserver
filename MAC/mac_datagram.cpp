@@ -36,7 +36,7 @@ const unsigned  char * Mac_dg::get_buf()
 {
     return buf;
 }
-//校验和,这里要求sum的数据中可能大于16位的数据变为零，但是必须通过算法的加
+//校验和,这里要求sum的数据中可能大于15位的数据变为零，但是必须通过算法的加
 //减实现。因此要与低16位进行计算，直到前面16位为0。
 //所以在实现上要将前面16位的数据通过算法变为0,
 //在这里都是short的计算。所以前后顺序可以改变。除了最后两步。
@@ -50,7 +50,6 @@ short Mac_dg::crc(unsigned  short *buf,size_t len){
     sum = (sum>>16)+(sum&0xffff);
     sum += (sum>>16);
     return ~sum;
-
 }
 
 //create_mac_datagr

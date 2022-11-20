@@ -1,8 +1,11 @@
 .vdiv{
     margin: 0 auto;
+
 };
 .vedio{
     background-color: black;
-    margin: 0 auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     
 };
