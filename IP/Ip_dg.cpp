@@ -123,3 +123,39 @@ const unsigned char *Ip_dg::get_buf()
 {
     return buf;
 }
+const unsigned char Ip_dg::get_v()
+{
+    return v;
+}
+const unsigned char Ip_dg::get_atos()
+{
+    return atos;
+}
+const unsigned char *Ip_dg::get_src()
+{
+    return src_ip;
+}
+const unsigned char *Ip_dg::get_dst()
+{
+    return dst_ip;
+}
+const short Ip_dg::get_totlen()
+{
+    return totlen;
+}
+const short Ip_dg::get_identification()
+{
+    return identification;
+}
+const unsigned char *Ip_dg::get_sign_and_offset()
+{
+    return sign_and_offset;
+}
+const unsigned char Ip_dg::get_ttl()
+{
+    return ttl;
+}
+const unsigned char Ip_dg::get_protocol()
+{
+    return protocol;
+}

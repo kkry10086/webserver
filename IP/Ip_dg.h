@@ -41,10 +41,21 @@ class Ip_dg
        //也可以不写，直接使用自己生成的
 
        //ip解析函数
-           int analy_ip(const char *msg,size_t dglen);
+       int analy_ip(const char *msg,size_t dglen);
 
-      
+       //getter
        const unsigned char * get_buf();
+       const unsigned char get_v();
+       const unsigned char get_atos();
+       const unsigned char *get_src();
+       const unsigned char *get_dst();
+       const short get_totlen();
+       const short get_identification();
+       const unsigned char *get_sign_and_offset();
+       const unsigned char get_ttl();
+       const unsigned char get_protocol();
+
+       
 
 };
 
