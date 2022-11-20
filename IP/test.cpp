@@ -28,6 +28,18 @@ int main(int argc,char** argv)
     for(size_t i =0;i<len+20;++i){
         cout<<static_cast<unsigned>(buf[i])<<':';
     }
+    cout<<endl;
+
+
+    //解析ip报文
+    const char *abuf = (const char *)buf;
+    ipdg->analy_ip(abuf,len+20);
+    const unsigned char* bsg = ipdg->get_buf();
+    for(size_t i =0;i<strlen((const char *)bsg);++i){
+        cout<<static_cast<unsigned>(bsg[i])<<':';
+    }
+
+
     cout<<std::setbase(10)<<endl;
 
     delete(ipdg);

@@ -18,6 +18,6 @@ int Epoll_create(size_t n);
 int Epoll_wait(int epfd,epoll_event *evs,int maxevents,int timeout);
 short chptrtos(const void *ch);
 char *stochptr(char *res,const short &num);
-short crc( const short *buf,size_t len);
+short crc(unsigned short *buf,size_t len);
 
 #endif

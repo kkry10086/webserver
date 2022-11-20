@@ -117,7 +117,7 @@ char *stochptr(char *res,const short &num){
 //减实现。因此要与低16位进行计算，直到前面16位为0。
 //所以在实现上要将前面16位的数据通过算法变为0,
 //在这里都是short的计算。所以前后顺序可以改变。除了最后两步。
-short crc(const short *buf,size_t len){
+short crc(unsigned  short *buf,size_t len){
     unsigned int sum{0};
     size_t rlen = len/2;
     for(size_t i =0;i!=rlen;++i){

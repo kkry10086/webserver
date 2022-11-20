@@ -73,7 +73,7 @@ const unsigned  char *Ip_dg::create_ip(const  char avl,
     memcpy(buf+20,msg,dglen);
 
     //计算校验和，然后写入ip段中
-    short cs = crc((short *)buf,20+dglen);
+    short cs = crc((unsigned short*)buf,(size_t)(buf[0]&0x0f)*4);
     char *checks = (char *)&cs;
     memcpy(buf+10,checks,2);
 
@@ -83,14 +83,14 @@ const unsigned  char *Ip_dg::create_ip(const  char avl,
 /*解析受到的IP报文*/
 int Ip_dg::analy_ip(const char *msg,size_t dglen)
 {
-    short cs = crc((const short *)msg,(unsigned char)(v&0x0f));
+    v = msg[0];
+    short cs = crc((unsigned short *)msg,(size_t)(v&0x0f)*4);
     if( 0 != cs)
     {
         std::cout<<"校验和出错"<<std::endl;
         return -1;
     }
     //写入v,tos
-    v = msg[0];
     tos = msg[1];
     //得到totlen
     totlen=chptrtos(msg+2);
@@ -107,7 +107,7 @@ int Ip_dg::analy_ip(const char *msg,size_t dglen)
 
     //不用管checksum,直接将数据写入buf
     //计算首部长度
-    size_t yl=(size_t)(v&0x0f);
+    size_t yl=(size_t)(v&0x0f)*4;
     if(nullptr != buf)
     {
         delete(buf);

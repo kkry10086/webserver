@@ -76,7 +76,7 @@ const unsigned char *  Mac_dg::create_mac(const char *msg,size_t len)
     return buf;
 }
 
-const unsigned char *Mac_dg::analy_mac(const char *amsg,size_t len)
+const unsigned char *Mac_dg::analy_mac(const char *msg,size_t len)
 {
     short macrc = crc((unsigned short *)msg,len);
     if(0x0000 != macrc ){
