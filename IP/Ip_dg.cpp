@@ -127,9 +127,9 @@ const unsigned char Ip_dg::get_v()
 {
     return v;
 }
-const unsigned char Ip_dg::get_atos()
+const unsigned char Ip_dg::get_tos()
 {
-    return atos;
+    return tos;
 }
 const unsigned char *Ip_dg::get_src()
 {

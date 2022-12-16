@@ -46,7 +46,7 @@ class Ip_dg
        //getter
        const unsigned char * get_buf();
        const unsigned char get_v();
-       const unsigned char get_atos();
+       const unsigned char get_tos();
        const unsigned char *get_src();
        const unsigned char *get_dst();
        const short get_totlen();
