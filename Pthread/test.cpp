@@ -42,7 +42,7 @@ int main(int argc, char ** argv)
     //两个队列的数量的和的最大值
     int backlog = 128;
     //ip地址
-    string ip = "192.168.0.104";
+    string ip = "192.168.123.18";
 
     //监听ip地址的结构体，等一下要和socket相关联(bind)
     struct sockaddr_in s_sddr;
@@ -90,7 +90,7 @@ int main(int argc, char ** argv)
     //
     while(true)
     {
-        cout<<"firwhile"<<endl;
+        cout<<"first while"<<endl;
         //等待有消息进来
         int ret = Epoll_wait(epfd,evs,EVENTLEN,-1);
         if(-1 == ret)continue;

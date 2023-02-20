@@ -1,6 +1,11 @@
+#ifndef ARP_H
+#define ARP_h
+
+
 #include<iostream>
-#include<string>
+#include<cstring>
 #include<unistd.h>
+#include<arpa/inet.h>
 
 class Arp
 {
@@ -20,5 +25,30 @@ private:
     unsigned char dstip[IPLEN];
 public:
     //构造函数
-    
+    //Arp();
+    //setter
+    void set_opt(short op);
+    void set_srcmac(const char *sm);
+    void set_srcip(const char *sip);
+    void set_dstmac(const char *dm);
+    void set_dstip(const char *dip);
+
+    //getter
+    const short &get_opt();
+    const unsigned char *get_srcmac();
+    const unsigned char *get_srcip();
+    const unsigned char *get_dstmac();
+    const unsigned char *get_dstip();
+
+
+    /*创建Arp的函数,buf是要生成的arp的数据存放 
+      的地点*/
+    void create_arp(char *buf);
+
+    /*解析arp的函数*/
+    void analy_arp(const char *buf);
 };
+
+
+
+#endif

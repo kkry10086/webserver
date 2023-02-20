@@ -30,7 +30,7 @@ int Accept(int sockfd,struct sockaddr* addr,socklen_t *addrlen){
         //说明被信号干扰了
         //if( EINTR == errno)
             
-        //EAGAIN说明没有连接的链接了
+        //EAGAIN说明没有连接的链接了,已经将缓存中的链接读取完了
         if( EAGAIN == errno || EWOULDBLOCK ==errno)
             return -1;
         else

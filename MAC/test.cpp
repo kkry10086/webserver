@@ -14,7 +14,8 @@ int main(int argc,char** argv)
     IF *interface = new IF;
     string ip{"192.168.10.1"};
     cout<<"ip 修改为"<<ip<<endl;
-    interface->set_ip(ip.c_str());
+    //interface->set_ip(ip.c_str());
+    interface->set_ip();
 
     unsigned char temp[MACLEN]={0x02,0x05,0x7e,0x8f,0x5a,0xcd};
     interface->set_mac(temp);
